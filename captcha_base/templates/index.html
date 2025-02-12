@@ -88,7 +88,7 @@
                     <!-- # captcha usecase video  -->
                     <video width="2432" height="1442" controls autoplay loop
                         class="rounded-md shadow-2xl ring-1 ring-gray-900/10  transform transition-all duration-300 ease-in-out hover:scale-95">
-                        <source src="{% static 'captcha.mp4' %}" type="video/mp4">
+                        <source src="" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -97,8 +97,12 @@
     </div>
 
     <script>
+        urls = ["{% static 'captcha.mp4' %}", "{% static 'captcha2.mp4' %}"]
         document.addEventListener("DOMContentLoaded", function () {
             let video = document.querySelector("video");
+
+            //give the source to the video in random
+            video.src = urls[Math.floor(Math.random() * urls.length)];
             // Delay loading by 2 seconds
             setTimeout(() => {
                 video.muted = true;  // Ensure autoplay works
