@@ -5,8 +5,8 @@ from django.utils import timezone
 
 from django.db.models import Q
 from django.http import JsonResponse
-import json, secrets
-
+import json, secrets, os
+from django.conf import settings
 
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
@@ -115,7 +115,14 @@ def serve_captcha_image(request, signed_image_id):
         captcha_image = get_object_or_404(CaptchaImg, uuid_token=image_id)
     except Http404:
         return JsonResponse({'error': 'Image not found.'}, status=404)
-    response = FileResponse(captcha_image.path, content_type='image/jpeg')
+    
+    image_path = os.path.join(settings.MEDIA_ROOT, str(captcha_image.path)).replace("\\", "/") # Convert Windows path to Unix path
+
+    if not os.path.exists(image_path):
+        return JsonResponse({'error': 'File not found on server.'}, status=404)
+    
+
+    response = FileResponse(image_path, content_type='image/jpeg')
     response['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
     response['Pragma'] = 'no-cache'
     return response
