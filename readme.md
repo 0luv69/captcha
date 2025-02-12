@@ -1,3 +1,10 @@
+# Video of Captcha 
+
+https://github.com/user-attachments/assets/1b1cfa69-62f4-46e8-82d5-4e2a52d22b7c
+
+
+
+
 # Captcha System Documentation
 
 This document explains the design, implementation, and security of a Django-based captcha system. The solution comprises backend logic for generating and validating captcha challenges as well as a frontend component for rendering and user interaction.
@@ -172,3 +179,14 @@ The Django secret key is used for signing session data and cookies.
 This captcha system uses a combination of secure backend processing and interactive frontend components to ensure that only human users can perform sensitive actions (such as form submissions). By leveraging secure signed URLs, session-based validation, and one-time tokens, the system offers a robust defense against automated abuse while maintaining a user-friendly interface.
 
 This documentation should serve as a detailed guide for maintaining, extending, or auditing the captcha system in your application.
+
+
+
+
+# Video of captcha workflow
+   - How verifyCaptcha works
+   - How verification gets verified & Rejected
+   - How direct console post is prevented 
+
+
+https://github.com/user-attachments/assets/a793b5f9-22dc-4127-8ae3-a4bed4c5f029
