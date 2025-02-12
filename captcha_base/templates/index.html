@@ -20,6 +20,15 @@
 
 
 <body>
+
+    <!-- ------------------------------------------- -->
+
+    {% include "captcha.html" %}
+
+    <!-- ------------------------------------------- -->
+
+
+
     <!-- the hero page  -->
     <div class="py-12 sm:py-24">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -83,6 +92,11 @@
             }, 2000); // 2000ms = 2 seconds delay
         });
     </script>
+
+
+
+
+
 
 
     <!-- popup for yes no -->
@@ -149,6 +163,9 @@
 
 
 
+
+
+
     <!-- subbmit of name form -->
     <script>
         const name_form = document.getElementById("name_form");
@@ -156,7 +173,6 @@
             event.preventDefault();
 
             const name = document.getElementById("name_field").value;
-            console.log(name);
             let token_input = document.createElement("input");
             token_input.type = "hidden";
             token_input.name = "captcha_validated_token";
@@ -170,11 +186,7 @@
 
 
 
-    <!-- ------------------------------------------- -->
 
-    {% include "captcha.html" %}
-
-    <!-- ------------------------------------------- -->
 
 
     <!-- ------------------------------------------- -->

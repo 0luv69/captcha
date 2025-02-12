@@ -399,7 +399,6 @@
         verifyBtn.classList.toggle('bg-gray-300', selectedImages.length !== 2);
         verifyBtn.classList.toggle('bg-green-500', selectedImages.length === 2);
         verifyBtn.classList.toggle('text-white', selectedImages.length === 2);
-        console.log(selectedImages);
     }
 
     // ---------------------------
@@ -465,7 +464,6 @@
                     setTimeout(() => {
                         captchaContainer.classList.remove('shake_error_captcha');
                     }, 500);
-                    console.log(data.captcha);
                     reset();
                     imageUrls = Object.values(data.captcha.challenge_images);
                     document.getElementById('question').textContent = data.captcha.challenge_question;
