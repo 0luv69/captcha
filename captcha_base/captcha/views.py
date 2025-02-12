@@ -122,7 +122,7 @@ def serve_captcha_image(request, signed_image_id):
         return JsonResponse({'error': 'File not found on server.'}, status=404)
     
 
-    response = FileResponse(image_path, content_type='image/jpeg')
+    response = FileResponse(open(image_path, "rb"), content_type='image/webp')
     response['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
     response['Pragma'] = 'no-cache'
     return response
