@@ -1,0 +1,531 @@
+{% load static %}
+
+
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> -->
+
+
+<section id="captcha-section"
+    class="fixed flex justify-center items-center  h-screen w-full bg-black bg-opacity-50 z-50 hidden">
+    <div id="captcha-modal" class="max-w-md w-full bg-white p-4 rounded-md shadow-md -mt-20">
+        <h2 class="font-semibold text-sm text-center mb-4" id="question">loading ....</h2>
+        <div id="captchaContainer"
+            class="relative w-full h-64 bg-gray-50 border border-gray-200 rounded-md overflow-hidden"></div>
+
+
+        <!-- Buttons Section -->
+        <div class="flex justify-between space-x-4 mt-6">
+            <button id="reshuffleBtn" class="flex-1 bg-blue-500 text-white py-2 rounded-lg 
+                        flex items-center justify-center space-x-2
+                        hover:bg-blue-600 transition-colors 
+                        focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2v6h-6"></path>
+                    <path
+                        d="M22 11.5C22 6.25408 17.7459 2 12.5 2C7.25408 2 3 6.25408 3 11.5C3 16.7459 7.25408 21 12.5 21C16.9668 21 20.6603 18.1544 21.7 14">
+                    </path>
+                </svg>
+                <span>Reshuffle</span>
+            </button>
+
+            <button id="newCaptchaBtn" class="flex-1 bg-purple-500 text-white py-2 rounded-lg 
+                        flex items-center justify-center space-x-2
+                        hover:bg-purple-600 transition-colors
+                        focus:outline-none focus:ring-2 focus:ring-purple-300">
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 0 1 9-9h0a9 9 0 0 1 9 9h0a9 9 0 0 1-9 9h0a9 9 0 0 1-9-9Z"></path>
+                    <path d="M9 12h6"></path>
+                    <path d="M12 9v6"></path>
+                </svg>
+                <span>New</span>
+            </button>
+
+            <button id="verifyBtn" class="flex-1 py-2 rounded-lg 
+                        flex items-center justify-center space-x-2
+                        transition-all duration-300 bg-gray-200 text-gray-400 cursor-not-allowed" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                <span>Verify</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- <script>
+
+    const captchaContainer = document.getElementById('captchaContainer');
+    const reshuffleBtn = document.getElementById('reshuffleBtn');
+    const newCaptchaBtn = document.getElementById('newCaptchaBtn');
+    const verifyBtn = document.getElementById('verifyBtn');
+
+    const captchaSection = document.getElementById('captcha-section');
+    const captchaModal = document.getElementById('captcha-modal');
+
+    // Show captcha
+    function showCaptcha() {
+        captchaSection.classList.remove('hidden');
+    }
+
+    // Close when clicking outside the modal
+    captchaSection.addEventListener('click', (event) => {
+        if (!captchaModal.contains(event.target)) {
+            captchaSection.classList.add('hidden');
+        }
+    });
+
+    // Example of triggering the captcha
+    showCaptcha();
+
+    let selectedImages = [];
+    let imageUrls = [];
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function generateRandomPosition(maxWidth, maxHeight, imgSize) {
+        let x, y;
+        let attempts = 0;
+        do {
+            x = Math.random() * (maxWidth - imgSize);
+            y = Math.random() * (maxHeight - imgSize);
+            attempts++;
+            // Prevent overlapping more than half the image size
+        } while (isOverlapping(x, y, imgSize) && attempts < 20);
+
+        const rotation = Math.random() * 30 - 15; // Random rotation between -15 and 15 degrees
+        return { x, y, rotation };
+    }
+
+    function isOverlapping(x, y, imgSize) {
+        const images = Array.from(captchaContainer.children);
+        return images.some(img => {
+            const rect = img.getBoundingClientRect();
+            const imgX = parseFloat(img.style.left);
+            const imgY = parseFloat(img.style.top);
+            return (
+                x < imgX + imgSize &&
+                x + imgSize > imgX &&
+                y < imgY + imgSize &&
+                y + imgSize > imgY
+            );
+        });
+    }
+
+
+
+    function renderCaptchaContainer() {
+        captchaContainer.innerHTML = '';
+        shuffleArray(imageUrls);
+
+        const containerWidth = captchaContainer.offsetWidth;
+        const containerHeight = captchaContainer.offsetHeight;
+        const imgSize = Math.min(containerWidth, containerHeight) / 3.5; // Adjust size based on container
+
+        imageUrls.forEach((img_obj, index) => {
+            const url = img_obj.secure_url;
+            const { x, y, rotation } = generateRandomPosition(containerWidth, containerHeight, imgSize);
+            const img = document.createElement('img');
+            img.src = url;
+            img.dataset.value = img_obj.uuid_token;
+            img.alt = `Captcha Image ${index + 1}`;
+            img.className = 'captcha-image cursor-pointer shadow-md rounded-md border border-gray-200';
+            img.style.width = `${imgSize}px`;
+            img.style.height = `${imgSize}px`;
+            img.style.left = `${x}px`;
+            img.style.top = `${y}px`;
+            img.style.transform = `rotate(${rotation}deg)`;
+
+            img.addEventListener('click', () => handleImageClick(img, img_obj.uuid_token));
+
+            captchaContainer.appendChild(img);
+        });
+    }
+
+    function handleImageClick(img, id) {
+        if (selectedImages.includes(id)) {
+            selectedImages = selectedImages.filter(selected => selected !== id);
+            img.classList.remove('ring-4', 'ring-blue-500',);
+        } else {
+            if (selectedImages.length < 2) {
+                selectedImages.push(id);
+                img.classList.add('ring-4', 'ring-blue-500',);
+            }
+        }
+
+        verifyBtn.disabled = selectedImages.length !== 2;
+        verifyBtn.classList.toggle('cursor-not-allowed', selectedImages.length !== 2);
+        verifyBtn.classList.toggle('bg-gray-300', selectedImages.length !== 2);
+        verifyBtn.classList.toggle('bg-green-500', selectedImages.length === 2);
+        verifyBtn.classList.toggle('text-white', selectedImages.length === 2);
+
+        console.log(selectedImages);
+    }
+
+
+    async function renderCaptchaImg() {
+        try {
+            const response = await fetch("{% url 'captcha:generate_captcha' %}", {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                }
+            });
+            if (response.ok) {
+                const data = await response.json();
+                imageUrls = Object.values(data.challenge_images);
+                document.getElementById('question').textContent = data.challenge_question;
+
+                if (Array.isArray(imageUrls) && imageUrls.length) {
+                    renderCaptchaContainer();
+                }
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    async function verifyCaptcha() {
+        const image1 = selectedImages[0];
+        const image2 = selectedImages[1];
+        console.log(image1, image2);
+        const selected_ids = [image1, image2];
+
+        try {
+            const response = await fetch("{% url 'captcha:validate_captcha' %}", {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: JSON.stringify({
+                    "selected_ids": selected_ids
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success) {
+                    showNotification({
+                        color: 'bg-green-500',
+                        message: data.message,
+                    })
+                    captchaSection.classList.add('hidden');
+                } else {
+                    showNotification({
+                        color: 'bg-red-500',
+                        message: data.message,
+                    })
+                    captchaContainer.classList.add('shake_error_captcha');
+                    setTimeout(() => {
+                        captchaContainer.classList.remove('shake_error_captcha');
+                    }, 500);
+                    console.log(data.captcha);
+                    reset();
+                    imageUrls = Object.values(data.captcha.challenge_images);
+                    console.log(imageUrls);
+                    document.getElementById('question').textContent = data.captcha.challenge_question;
+                    renderCaptchaContainer();
+                }
+
+            }
+        } catch (error) {
+            reset();
+            showNotification({
+                color: 'red',
+                title: 'Error',
+                message: 'An error occurred while verifying the captcha. Please try again.',
+            })
+        }
+    }
+
+    function reset() {
+        selectedImages = [];
+        verifyBtn.disabled = true;
+        verifyBtn.classList.add('cursor-not-allowed', 'bg-gray-300');
+        verifyBtn.classList.remove('bg-green-500');
+    }
+
+    reshuffleBtn.addEventListener('click', () => {
+        renderCaptchaContainer();
+        reset();
+    });
+
+    verifyBtn.addEventListener('click', verifyCaptcha);
+
+    newCaptchaBtn.addEventListener('click', () => {
+        reset();
+        renderCaptchaImg();
+    });
+
+
+
+    window.addEventListener('resize', renderCaptchaContainer);
+
+    // Initial Render
+    document.addEventListener('DOMContentLoaded', renderCaptchaImg);
+</script> -->
+
+
+<script>
+    // ---------------------------
+    // Global Callback Variables
+    // ---------------------------
+    let captchaCallback = null;
+    let captchaCallbackParams = null;
+
+    // ---------------------------
+    // DOM Elements & Global State
+    // ---------------------------
+    const captchaContainer = document.getElementById('captchaContainer');
+    const reshuffleBtn = document.getElementById('reshuffleBtn');
+    const newCaptchaBtn = document.getElementById('newCaptchaBtn');
+    const verifyBtn = document.getElementById('verifyBtn');
+    const captchaSection = document.getElementById('captcha-section');
+    const captchaModal = document.getElementById('captcha-modal');
+
+    let selectedImages = [];
+    let imageUrls = [];
+
+    // ---------------------------
+    // Utility Functions
+    // ---------------------------
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function generateRandomPosition(maxWidth, maxHeight, imgSize) {
+        let x, y;
+        let attempts = 0;
+        do {
+            x = Math.random() * (maxWidth - imgSize);
+            y = Math.random() * (maxHeight - imgSize);
+            attempts++;
+        } while (isOverlapping(x, y, imgSize) && attempts < 20);
+
+        const rotation = Math.random() * 30 - 15; // Rotation between -15 and 15 degrees
+        return { x, y, rotation };
+    }
+
+    function isOverlapping(x, y, imgSize) {
+        const images = Array.from(captchaContainer.children);
+        return images.some(img => {
+            const imgX = parseFloat(img.style.left);
+            const imgY = parseFloat(img.style.top);
+            return (
+                x < imgX + imgSize &&
+                x + imgSize > imgX &&
+                y < imgY + imgSize &&
+                y + imgSize > imgY
+            );
+        });
+    }
+
+    // ---------------------------
+    // Captcha UI Functions
+    // ---------------------------
+    // Show and hide the captcha modal.
+    function showCaptcha() {
+        captchaSection.classList.remove('hidden');
+    }
+
+    function hideCaptcha() {
+        captchaSection.classList.add('hidden');
+    }
+
+    // Reset the selection and disable the verify button.
+    function reset() {
+        selectedImages = [];
+        verifyBtn.disabled = true;
+        verifyBtn.classList.add('cursor-not-allowed', 'bg-gray-300');
+        verifyBtn.classList.remove('bg-green-500');
+    }
+
+    // Render the captcha images in a randomized layout.
+    function renderCaptchaContainer() {
+        captchaContainer.innerHTML = '';
+        shuffleArray(imageUrls);
+
+        const containerWidth = captchaContainer.offsetWidth;
+        const containerHeight = captchaContainer.offsetHeight;
+        const imgSize = Math.min(containerWidth, containerHeight) / 3.5;
+
+        imageUrls.forEach((img_obj, index) => {
+            const url = img_obj.secure_url;
+            const { x, y, rotation } = generateRandomPosition(containerWidth, containerHeight, imgSize);
+            const img = document.createElement('img');
+            img.src = url;
+            img.dataset.value = img_obj.uuid_token;
+            img.alt = `Captcha Image ${index + 1}`;
+            img.className = 'captcha-image absolute cursor-pointer shadow-md rounded-md border border-gray-200';
+            img.style.width = `${imgSize}px`;
+            img.style.height = `${imgSize}px`;
+            img.style.left = `${x}px`;
+            img.style.top = `${y}px`;
+            img.style.transform = `rotate(${rotation}deg)`;
+
+            img.addEventListener('click', () => handleImageClick(img, img_obj.uuid_token));
+
+            captchaContainer.appendChild(img);
+        });
+    }
+
+    function handleImageClick(img, id) {
+        if (selectedImages.includes(id)) {
+            selectedImages = selectedImages.filter(selected => selected !== id);
+            img.classList.remove('ring-4', 'ring-blue-500');
+        } else {
+            if (selectedImages.length < 2) {
+                selectedImages.push(id);
+                img.classList.add('ring-4', 'ring-blue-500');
+            }
+        }
+        verifyBtn.disabled = selectedImages.length !== 2;
+        verifyBtn.classList.toggle('cursor-not-allowed', selectedImages.length !== 2);
+        verifyBtn.classList.toggle('bg-gray-300', selectedImages.length !== 2);
+        verifyBtn.classList.toggle('bg-green-500', selectedImages.length === 2);
+        verifyBtn.classList.toggle('text-white', selectedImages.length === 2);
+        console.log(selectedImages);
+    }
+
+    // ---------------------------
+    // Captcha API Calls
+    // ---------------------------
+    async function renderCaptchaImg() {
+        try {
+            const response = await fetch("{% url 'captcha:generate_captcha' %}", {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                }
+            });
+            if (response.ok) {
+                const data = await response.json();
+                imageUrls = Object.values(data.challenge_images);
+                document.getElementById('question').textContent = data.challenge_question;
+                if (Array.isArray(imageUrls) && imageUrls.length) {
+                    renderCaptchaContainer();
+                }
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    async function verifyCaptcha() {
+        try {
+            const response = await fetch("{% url 'captcha:validate_captcha' %}", {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: JSON.stringify({
+                    "selected_ids": selectedImages
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success) {
+                    showNotification({
+                        color: 'bg-green-500',
+                        message: data.message,
+                    });
+                    hideCaptcha();
+                    // Call the callback function (if provided) with the parameters.
+                    token_tag = captchaCallbackParams['token_tag'];
+                    token_tag.value = data.token;
+                    if (captchaCallback) {
+                        captchaCallback(captchaCallbackParams);
+                        captchaCallback = null;
+                        captchaCallbackParams = null;
+                    }
+                } else {
+                    showNotification({
+                        color: 'bg-red-500',
+                        message: data.message,
+                    });
+                    captchaContainer.classList.add('shake_error_captcha');
+                    setTimeout(() => {
+                        captchaContainer.classList.remove('shake_error_captcha');
+                    }, 500);
+                    console.log(data.captcha);
+                    reset();
+                    imageUrls = Object.values(data.captcha.challenge_images);
+                    document.getElementById('question').textContent = data.captcha.challenge_question;
+                    renderCaptchaContainer();
+                }
+            }
+        }
+        catch (error) {
+            reset();
+            showNotification({
+                color: 'bg-red-500',
+                title: 'Error',
+                // message: 'An error occurred while verifying the captcha. Please try again.',
+                message: error.message,
+            });
+        }
+    }
+
+    // ---------------------------
+    // Event Listeners
+    // ---------------------------
+    reshuffleBtn.addEventListener('click', () => {
+        renderCaptchaContainer();
+        reset();
+    });
+
+    verifyBtn.addEventListener('click', verifyCaptcha);
+
+    newCaptchaBtn.addEventListener('click', () => {
+        reset();
+        renderCaptchaImg();
+    });
+
+    window.addEventListener('resize', renderCaptchaContainer);
+
+    // Close modal if user clicks outside the captcha modal content.
+    captchaSection.addEventListener('click', (event) => {
+        if (!captchaModal.contains(event.target)) {
+            hideCaptcha();
+        }
+    });
+
+    // ---------------------------
+    // New: initCaptcha Function
+    // ---------------------------
+    /**
+     * Initializes and displays the captcha.
+     * @param {Function} callback - The function to call once captcha is verified.
+        * @param {any} params - Optional parameters to pass to the callback.
+        * @param {number} delay - Delay in milliseconds before loading captcha images.
+        */
+    function initCaptcha(callback, params = null, delay = 1000) {
+        captchaCallback = callback;
+        captchaCallbackParams = params;
+        reset(); // Clear any previous selections
+        showCaptcha();
+        // Load the captcha images after the specified delay.
+        setTimeout(() => {
+            renderCaptchaImg();
+        }, delay);
+    }
+
+</script>

@@ -1,0 +1,259 @@
+{% load static %}
+
+<!-- {% load static tailwind_tags %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Build using Django, by Luv</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> -->
+    <!-- {% tailwind_css %} -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+
+</head>
+
+
+
+
+
+
+<body>
+
+    <!-- ------------------------------------------- -->
+
+    {% include "captcha.html" %}
+
+    <!-- ------------------------------------------- -->
+
+
+    <!-- ------------------------------------------- -->
+    <!-- Notification Section -->
+    <div id="notifications-container" class="fixed right-0 top-5 z-50 flex flex-col space-y-2"></div>
+    <script>
+        // Notification section
+
+        function showNotification({
+            color = "bg-green-500",
+            time = 3000,
+            message = "This is a notification message.",
+            title = "Notification",
+        } = {}) {
+            const notificationId = `notification-${Date.now()}`;
+
+            const notification = document.createElement("div");
+            notification.id = notificationId;
+            notification.className = `flex items-center sm:max-w-sm max-w-72 p-4 mb-4 text-white rounded-lg shadow-lg transition-all duration-500 ease-out transform translate-x-full scale-90 opacity-0 ${color}`;
+
+            notification.innerHTML = `
+    <div class="flex-shrink-0 mr-3">
+      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 19.978a7 7 0 100-14 7 7 0 000 14z"></path>
+      </svg>
+    </div>
+    <div>
+      <span class="font-serif font-bold">${title}</span>
+      <p class="text-sm font-mono">${message}</p>
+    </div>
+    <button onclick="closeNotification('${notificationId}', 100)" class="ml-auto text-white focus:outline-none pl-3 hover:text-black">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  `;
+
+            document.getElementById("notifications-container").appendChild(notification);
+
+            setTimeout(() => {
+                notification.classList.remove("translate-x-full", "scale-90", "opacity-0");
+                notification.classList.add("translate-x-0", "scale-100", "opacity-100");
+            }, 100);
+
+            const timeoutId = setTimeout(() => {
+                closeNotification(notificationId);
+            }, time);
+
+            notification.dataset.timeoutId = timeoutId; // Store the timeout ID for future reference
+        }
+
+        function closeNotification(notificationId, time = 500) {
+            const notification = document.getElementById(notificationId);
+            if (notification) {
+                clearTimeout(notification.dataset.timeoutId); // Clear existing timeout if it exists
+                notification.classList.add("translate-x-full", "scale-90", "opacity-0");
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, time);
+            }
+        }
+    </script>
+    <!-- ------------------------------------------- -->
+
+
+
+
+
+
+    <!-- popup for yes no -->
+    <div id="popupBOX" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-20 min-h-screen p-4
+                          transition-all duration-300 ease-in-out">
+        <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] 
+                             w-full max-w-md transform transition-all duration-300 ease-in-out scale
+                             hover:shadow-[0_20px_70px_-15px_rgba(0,0,0,0.35)]
+                             border border-gray-100">
+
+            <!-- Title -->
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 font-serif tracking-tight" id="popuptitle">
+                Proceed to CaptchaAction
+            </h2>
+
+            <!-- Message -->
+            <p class="text-gray-600 mb-8 text-base leading-relaxed font-sans" id="popupmsg">
+                Enter your lovely name :)
+            </p>
+
+            <!-- Input filed to enter name -->
+            <form action="{% url 'subbmit_name'%}" method="post" class="mb-8" id="name_form">
+                {% csrf_token %}
+                <label for="name_field" class="text-gray-700 font-medium">Name:</label>
+                <input type="text" id="name_field" required name="name_field"
+                    class="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+                    placeholder="Enter Name" />
+
+                <!-- Action Buttons -->
+                <div class="flex justify-end items-center gap-4 mt-6">
+                    <!-- Cancel Button -->
+                    <button onclick="togglePopupBox()" class="px-6 py-2.5 rounded-xl text-gray-700 font-medium
+                                      bg-gray-100 hover:bg-gray-200 
+                                      transform transition-all duration-200
+                                      hover:scale-105 active:scale-95
+                                      focus:outline-none focus:ring-2 focus:ring-gray-300
+                                      text-sm md:text-base" id="type2Button">
+                        Cancel
+                    </button>
+
+                    <!-- Confirm/Yes Button -->
+                    <button type="submit" class="px-6 py-2.5 rounded-xl text-white font-medium
+                                     bg-gradient-to-r from-red-600 to-red-700
+                                     hover:from-red-500 hover:to-red-600
+                                     transform transition-all duration-200 
+                                     hover:scale-105 active:scale-95
+                                     shadow-lg hover:shadow-xl
+                                     focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2
+                                     text-sm md:text-base" id="type1Button">
+                        Yes, Proceed
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        function togglePopupBox() {
+            document.getElementById('popupBOX').classList.toggle('hidden');
+        }
+    </script>
+
+
+
+
+    <!-- subbmit of name form -->
+    <script>
+        const name_form = document.getElementById("name_form");
+        name_form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name_field").value;
+            console.log(name);
+            let token_input = document.createElement("input");
+            token_input.type = "hidden";
+            token_input.name = "captcha_validated_token";
+            name_form.appendChild(token_input);
+
+            initCaptcha(name_form.submit.bind(name_form), { 'token_tag': token_input }, 0);
+        });
+    </script>
+
+
+
+    <div class="py-12 sm:py-24">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mb-8 flex justify-center">
+                <p
+                    class="relative rounded-full px-4 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-inset ring-gray-900/10 hover:ring-gray-900/20">
+                    <span class="">Vist The Builder.</span>
+                    <a href="https://www.rujalbaniya.com.np/" target="_blank" class="font-semibold text-lime-600">
+                        <span class="absolute inset-0"></span> Luv 💓 <span>→</span>
+                    </a>
+                </p>
+            </div>
+            <div class="mx-auto max-w-2xl text-center">
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                    Captcha Build using Django
+                </h1>
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                    This captcha is Build using Django and Tailwindcss. It is a simple and secure captcha for your
+                    website. It is easy to integrate and customize. It is a simple and secure captcha for your website.
+                    <br>
+                    Unlike Other captcha, this captcha is more user friendly and has unique Way of solving the captcha.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+
+                    <a onclick="togglePopupBox()" class=" rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm
+                        hover:bg-lime-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+                        focus-visible:outline-lime-600">Check
+                        out the demo
+                    </a>
+                    <a href="https://github.com/0luv69/captcha" class="text-sm font-semibold leading-6 text-gray-900">
+                        Learn more
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-10 flow-root sm:mt-20">
+                <div
+                    class="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                    <!-- <img src=""
+                        width="2432" height="1442" class="rounded-md shadow-2xl ring-1 ring-gray-900/10"> -->
+                    <!-- # captcha usecase video  -->
+                    <video width="2432" height="1442" controls autoplay loop
+                        class="rounded-md shadow-2xl ring-1 ring-gray-900/10">
+                        <source src="{% static 'captcha.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% if messages %}
+    {% for message in messages %}
+    <script type="text/javascript">
+        showNotification({
+            color: "{% if message.tags == 'success' %}bg-green-500{% elif message.tags == 'info' %}bg-blue-500{% elif message.tags == 'warning' %}bg-yellow-500{% else %}bg-red-500{% endif %}",
+            title: "{{ message.title }}",
+            message: "{{ message.message }}",
+            time:
+                {% if message.tags == 'success' %} 3000
+          {% elif message.tags == 'info' %} 5000
+          {% elif message.tags == 'warning' %} 3500
+          {% else %} 6000
+          {% endif %}
+    
+        });
+    </script>
+    {% endfor %}
+    {% endif %}
+
+
+</body>
+
+</html>
+
+<!-- initCaptcha(loginForm.submit.bind(loginForm), {'token_tag': token_input}, 0); -->

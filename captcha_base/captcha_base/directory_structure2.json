@@ -1,0 +1,1025 @@
+{
+    "alter_img": {
+        "question": null,
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "alter-1.webp",
+                "path": "captcha\\alter_img\\alter-1.webp",
+                "size": 10606,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-10.webp",
+                "path": "captcha\\alter_img\\alter-10.webp",
+                "size": 11476,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-11.webp",
+                "path": "captcha\\alter_img\\alter-11.webp",
+                "size": 20676,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-12.webp",
+                "path": "captcha\\alter_img\\alter-12.webp",
+                "size": 22348,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-13.webp",
+                "path": "captcha\\alter_img\\alter-13.webp",
+                "size": 15224,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-14.webp",
+                "path": "captcha\\alter_img\\alter-14.webp",
+                "size": 17066,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-15.webp",
+                "path": "captcha\\alter_img\\alter-15.webp",
+                "size": 28124,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-16.webp",
+                "path": "captcha\\alter_img\\alter-16.webp",
+                "size": 22026,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-17.webp",
+                "path": "captcha\\alter_img\\alter-17.webp",
+                "size": 28398,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-18.webp",
+                "path": "captcha\\alter_img\\alter-18.webp",
+                "size": 23936,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-2.webp",
+                "path": "captcha\\alter_img\\alter-2.webp",
+                "size": 14188,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-3.webp",
+                "path": "captcha\\alter_img\\alter-3.webp",
+                "size": 9830,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-4.webp",
+                "path": "captcha\\alter_img\\alter-4.webp",
+                "size": 2632,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-5.webp",
+                "path": "captcha\\alter_img\\alter-5.webp",
+                "size": 11346,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-6.webp",
+                "path": "captcha\\alter_img\\alter-6.webp",
+                "size": 9150,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-7.webp",
+                "path": "captcha\\alter_img\\alter-7.webp",
+                "size": 13320,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-8.webp",
+                "path": "captcha\\alter_img\\alter-8.webp",
+                "size": 21708,
+                "type": "webp",
+                "category": "alter_img"
+            },
+            {
+                "name": "alter-9.webp",
+                "path": "captcha\\alter_img\\alter-9.webp",
+                "size": 22188,
+                "type": "webp",
+                "category": "alter_img"
+            }
+        ]
+    },
+    "banana": {
+        "question": "Choose the Images of Monkey Eating Banana.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "banana-1.webp",
+                "path": "captcha\\banana\\banana-1.webp",
+                "size": 8112,
+                "type": "webp",
+                "category": "banana"
+            },
+            {
+                "name": "banana-2.webp",
+                "path": "captcha\\banana\\banana-2.webp",
+                "size": 9840,
+                "type": "webp",
+                "category": "banana"
+            },
+            {
+                "name": "banana-3.webp",
+                "path": "captcha\\banana\\banana-3.webp",
+                "size": 10266,
+                "type": "webp",
+                "category": "banana"
+            },
+            {
+                "name": "banana-4.webp",
+                "path": "captcha\\banana\\banana-4.webp",
+                "size": 8734,
+                "type": "webp",
+                "category": "banana"
+            },
+            {
+                "name": "banana-5.webp",
+                "path": "captcha\\banana\\banana-5.webp",
+                "size": 11192,
+                "type": "webp",
+                "category": "banana"
+            },
+            {
+                "name": "banana-6.webp",
+                "path": "captcha\\banana\\banana-6.webp",
+                "size": 12590,
+                "type": "webp",
+                "category": "banana"
+            },
+            {
+                "name": "banana-7.webp",
+                "path": "captcha\\banana\\banana-7.webp",
+                "size": 10850,
+                "type": "webp",
+                "category": "banana"
+            }
+        ],
+        "other": {
+            "question": "Choose the Images of Monkey not Eating Banana.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "other-1.webp",
+                    "path": "captcha\\banana\\other\\other-1.webp",
+                    "size": 9680,
+                    "type": "webp",
+                    "category": "banana____other"
+                },
+                {
+                    "name": "other-2.webp",
+                    "path": "captcha\\banana\\other\\other-2.webp",
+                    "size": 11840,
+                    "type": "webp",
+                    "category": "banana____other"
+                },
+                {
+                    "name": "other-3.webp",
+                    "path": "captcha\\banana\\other\\other-3.webp",
+                    "size": 6068,
+                    "type": "webp",
+                    "category": "banana____other"
+                },
+                {
+                    "name": "other-4.webp",
+                    "path": "captcha\\banana\\other\\other-4.webp",
+                    "size": 10698,
+                    "type": "webp",
+                    "category": "banana____other"
+                }
+            ]
+        }
+    },
+    "buddha_stuppa": {
+        "question": "Choose the Images of Buddha Stuppa Temple of Nepal.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "temple_1.webp",
+                "path": "captcha\\buddha_stuppa\\temple_1.webp",
+                "size": 16414,
+                "type": "webp",
+                "category": "buddha_stuppa"
+            },
+            {
+                "name": "temple_2.webp",
+                "path": "captcha\\buddha_stuppa\\temple_2.webp",
+                "size": 16370,
+                "type": "webp",
+                "category": "buddha_stuppa"
+            },
+            {
+                "name": "temple_3.webp",
+                "path": "captcha\\buddha_stuppa\\temple_3.webp",
+                "size": 13844,
+                "type": "webp",
+                "category": "buddha_stuppa"
+            },
+            {
+                "name": "temple_4.webp",
+                "path": "captcha\\buddha_stuppa\\temple_4.webp",
+                "size": 15432,
+                "type": "webp",
+                "category": "buddha_stuppa"
+            },
+            {
+                "name": "temple_5.jpeg",
+                "path": "captcha\\buddha_stuppa\\temple_5.jpeg",
+                "size": 8730,
+                "type": "jpeg",
+                "category": "buddha_stuppa"
+            },
+            {
+                "name": "temple_6.webp",
+                "path": "captcha\\buddha_stuppa\\temple_6.webp",
+                "size": 249176,
+                "type": "webp",
+                "category": "buddha_stuppa"
+            }
+        ],
+        "other": {
+            "question": "Choose the Images of non Buddha Stuppa Temple of Nepal.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "other_1.jpeg",
+                    "path": "captcha\\buddha_stuppa\\other\\other_1.jpeg",
+                    "size": 694920,
+                    "type": "jpeg",
+                    "category": "buddha_stuppa____other"
+                },
+                {
+                    "name": "other_2.jpeg",
+                    "path": "captcha\\buddha_stuppa\\other\\other_2.jpeg",
+                    "size": 696562,
+                    "type": "jpeg",
+                    "category": "buddha_stuppa____other"
+                }
+            ]
+        }
+    },
+    "car": {
+        "question": "Choose the Images of Cars that is facing towards Right side.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "car-1.webp",
+                "path": "captcha\\car\\car-1.webp",
+                "size": 9670,
+                "type": "webp",
+                "category": "car"
+            },
+            {
+                "name": "car-2.webp",
+                "path": "captcha\\car\\car-2.webp",
+                "size": 8841,
+                "type": "webp",
+                "category": "car"
+            },
+            {
+                "name": "car-3.webp",
+                "path": "captcha\\car\\car-3.webp",
+                "size": 10898,
+                "type": "webp",
+                "category": "car"
+            },
+            {
+                "name": "car-4.webp",
+                "path": "captcha\\car\\car-4.webp",
+                "size": 16652,
+                "type": "webp",
+                "category": "car"
+            },
+            {
+                "name": "car-5.webp",
+                "path": "captcha\\car\\car-5.webp",
+                "size": 12454,
+                "type": "webp",
+                "category": "car"
+            },
+            {
+                "name": "car-6.webp",
+                "path": "captcha\\car\\car-6.webp",
+                "size": 12236,
+                "type": "webp",
+                "category": "car"
+            }
+        ],
+        "other": {
+            "question": "Choose the Images of Cars that is not facing towards Right side.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "other-1.webp",
+                    "path": "captcha\\car\\other\\other-1.webp",
+                    "size": 346460,
+                    "type": "webp",
+                    "category": "car____other"
+                },
+                {
+                    "name": "other-2.webp",
+                    "path": "captcha\\car\\other\\other-2.webp",
+                    "size": 10091,
+                    "type": "webp",
+                    "category": "car____other"
+                },
+                {
+                    "name": "other-3.webp",
+                    "path": "captcha\\car\\other\\other-3.webp",
+                    "size": 6534,
+                    "type": "webp",
+                    "category": "car____other"
+                },
+                {
+                    "name": "other-4.webp",
+                    "path": "captcha\\car\\other\\other-4.webp",
+                    "size": 9802,
+                    "type": "webp",
+                    "category": "car____other"
+                },
+                {
+                    "name": "other-5.webp",
+                    "path": "captcha\\car\\other\\other-5.webp",
+                    "size": 11354,
+                    "type": "webp",
+                    "category": "car____other"
+                }
+            ]
+        }
+    },
+    "chair": {
+        "question": "Choose the Images of cat sitting on chair.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "chair-1.webp",
+                "path": "captcha\\chair\\chair-1.webp",
+                "size": 9574,
+                "type": "webp",
+                "category": "chair"
+            },
+            {
+                "name": "chair-2.webp",
+                "path": "captcha\\chair\\chair-2.webp",
+                "size": 10128,
+                "type": "webp",
+                "category": "chair"
+            },
+            {
+                "name": "chair-3.webp",
+                "path": "captcha\\chair\\chair-3.webp",
+                "size": 7084,
+                "type": "webp",
+                "category": "chair"
+            },
+            {
+                "name": "chair-4.webp",
+                "path": "captcha\\chair\\chair-4.webp",
+                "size": 8888,
+                "type": "webp",
+                "category": "chair"
+            },
+            {
+                "name": "chair-5.webp",
+                "path": "captcha\\chair\\chair-5.webp",
+                "size": 3698,
+                "type": "webp",
+                "category": "chair"
+            }
+        ],
+        "other": {
+            "question": "Choose the Images of cat not sitting on chair.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "dogs-1.webp",
+                    "path": "captcha\\chair\\other\\dogs-1.webp",
+                    "size": 11876,
+                    "type": "webp",
+                    "category": "chair____other"
+                },
+                {
+                    "name": "dogs-2.webp",
+                    "path": "captcha\\chair\\other\\dogs-2.webp",
+                    "size": 5478,
+                    "type": "webp",
+                    "category": "chair____other"
+                },
+                {
+                    "name": "dogs-3.webp",
+                    "path": "captcha\\chair\\other\\dogs-3.webp",
+                    "size": 8530,
+                    "type": "webp",
+                    "category": "chair____other"
+                },
+                {
+                    "name": "dogs-4.webp",
+                    "path": "captcha\\chair\\other\\dogs-4.webp",
+                    "size": 9634,
+                    "type": "webp",
+                    "category": "chair____other"
+                },
+                {
+                    "name": "dogs-5.webp",
+                    "path": "captcha\\chair\\other\\dogs-5.webp",
+                    "size": 9706,
+                    "type": "webp",
+                    "category": "chair____other"
+                },
+                {
+                    "name": "dogs-6.webp",
+                    "path": "captcha\\chair\\other\\dogs-6.webp",
+                    "size": 13112,
+                    "type": "webp",
+                    "category": "chair____other"
+                },
+                {
+                    "name": "dogs-7.webp",
+                    "path": "captcha\\chair\\other\\dogs-7.webp",
+                    "size": 9196,
+                    "type": "webp",
+                    "category": "chair____other"
+                },
+                {
+                    "name": "dogs-8.webp",
+                    "path": "captcha\\chair\\other\\dogs-8.webp",
+                    "size": 5426,
+                    "type": "webp",
+                    "category": "chair____other"
+                }
+            ]
+        }
+    },
+    "dog": {
+        "question": "Choose the images of dogs Playing Football.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "dog_1.jpeg",
+                "path": "captcha\\dog\\dog_1.jpeg",
+                "size": 579648,
+                "type": "jpeg",
+                "category": "dog"
+            },
+            {
+                "name": "dog_2.jpeg",
+                "path": "captcha\\dog\\dog_2.jpeg",
+                "size": 692908,
+                "type": "jpeg",
+                "category": "dog"
+            },
+            {
+                "name": "dog_3.webp",
+                "path": "captcha\\dog\\dog_3.webp",
+                "size": 6566,
+                "type": "webp",
+                "category": "dog"
+            },
+            {
+                "name": "dog_4.jpeg",
+                "path": "captcha\\dog\\dog_4.jpeg",
+                "size": 574546,
+                "type": "jpeg",
+                "category": "dog"
+            },
+            {
+                "name": "dog_5.webp",
+                "path": "captcha\\dog\\dog_5.webp",
+                "size": 9790,
+                "type": "webp",
+                "category": "dog"
+            }
+        ],
+        "other": {
+            "question": "Choose the images of dogs not Playing Football",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "other_1.jpeg",
+                    "path": "captcha\\dog\\other\\other_1.jpeg",
+                    "size": 400733,
+                    "type": "jpeg",
+                    "category": "dog____other"
+                },
+                {
+                    "name": "other_2.webp",
+                    "path": "captcha\\dog\\other\\other_2.webp",
+                    "size": 6874,
+                    "type": "webp",
+                    "category": "dog____other"
+                },
+                {
+                    "name": "other_3.jpeg",
+                    "path": "captcha\\dog\\other\\other_3.jpeg",
+                    "size": 568597,
+                    "type": "jpeg",
+                    "category": "dog____other"
+                },
+                {
+                    "name": "other_4.jpeg",
+                    "path": "captcha\\dog\\other\\other_4.jpeg",
+                    "size": 581871,
+                    "type": "jpeg",
+                    "category": "dog____other"
+                },
+                {
+                    "name": "other_5.jpeg",
+                    "path": "captcha\\dog\\other\\other_5.jpeg",
+                    "size": 442541,
+                    "type": "jpeg",
+                    "category": "dog____other"
+                },
+                {
+                    "name": "other_6.jpeg",
+                    "path": "captcha\\dog\\other\\other_6.jpeg",
+                    "size": 683251,
+                    "type": "jpeg",
+                    "category": "dog____other"
+                },
+                {
+                    "name": "other_7.png",
+                    "path": "captcha\\dog\\other\\other_7.png",
+                    "size": 945657,
+                    "type": "png",
+                    "category": "dog____other"
+                },
+                {
+                    "name": "other_8.png",
+                    "path": "captcha\\dog\\other\\other_8.png",
+                    "size": 843541,
+                    "type": "png",
+                    "category": "dog____other"
+                }
+            ]
+        }
+    },
+    "fish": {
+        "question": "Choose the Images of Fish that is facing towards Left side.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "fish-1.webp",
+                "path": "captcha\\fish\\fish-1.webp",
+                "size": 4912,
+                "type": "webp",
+                "category": "fish"
+            },
+            {
+                "name": "fish-2.webp",
+                "path": "captcha\\fish\\fish-2.webp",
+                "size": 13582,
+                "type": "webp",
+                "category": "fish"
+            },
+            {
+                "name": "fish-3.webp",
+                "path": "captcha\\fish\\fish-3.webp",
+                "size": 5214,
+                "type": "webp",
+                "category": "fish"
+            },
+            {
+                "name": "fish-4.webp",
+                "path": "captcha\\fish\\fish-4.webp",
+                "size": 4664,
+                "type": "webp",
+                "category": "fish"
+            },
+            {
+                "name": "fish-5.webp",
+                "path": "captcha\\fish\\fish-5.webp",
+                "size": 27920,
+                "type": "webp",
+                "category": "fish"
+            }
+            
+        ],
+        "other": {
+            "question": "Choose the Images of Fish that is not facing towards Left side.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "other-1.webp",
+                    "path": "captcha\\fish\\other\\other-1.webp",
+                    "size": 6832,
+                    "type": "webp",
+                    "category": "fish____other"
+                },
+                {
+                    "name": "other-2.webp",
+                    "path": "captcha\\fish\\other\\other-2.webp",
+                    "size": 9144,
+                    "type": "webp",
+                    "category": "fish____other"
+                },
+                {
+                    "name": "other-3.webp",
+                    "path": "captcha\\fish\\other\\other-3.webp",
+                    "size": 18266,
+                    "type": "webp",
+                    "category": "fish____other"
+                },
+                {
+                    "name": "other-4.webp",
+                    "path": "captcha\\fish\\other\\other-4.webp",
+                    "size": 16988,
+                    "type": "webp",
+                    "category": "fish____other"
+                },
+                {
+                    "name": "other-5.webp",
+                    "path": "captcha\\fish\\other\\other-5.webp",
+                    "size": 6840,
+                    "type": "webp",
+                    "category": "fish____other"
+                },
+                {
+                "name": "other-6.webp",
+                "path": "captcha\\fish\\other\\other-6.webp",
+                "size": 9718,
+                "type": "webp",
+                "category": "fish____other"
+            }
+            ]
+        }
+    },
+    "guitar": {
+        "question": "Choose the Images of real Guitar.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "instrument-1.webp",
+                "path": "captcha\\guitar\\instrument-1.webp",
+                "size": 7196,
+                "type": "webp",
+                "category": "guitar"
+            },
+            {
+                "name": "instrument-2.webp",
+                "path": "captcha\\guitar\\instrument-2.webp",
+                "size": 12242,
+                "type": "webp",
+                "category": "guitar"
+            },
+            {
+                "name": "instrument-3.webp",
+                "path": "captcha\\guitar\\instrument-3.webp",
+                "size": 7872,
+                "type": "webp",
+                "category": "guitar"
+            },
+            {
+                "name": "instrument-4.webp",
+                "path": "captcha\\guitar\\instrument-4.webp",
+                "size": 4418,
+                "type": "webp",
+                "category": "guitar"
+            },
+            {
+                "name": "instrument-5.webp",
+                "path": "captcha\\guitar\\instrument-5.webp",
+                "size": 4140,
+                "type": "webp",
+                "category": "guitar"
+            }
+        ],
+        "other": {
+            "question": "Choose the Images of Fake Guitar.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "other-1.webp",
+                    "path": "captcha\\guitar\\other\\other-1.webp",
+                    "size": 16632,
+                    "type": "webp",
+                    "category": "guitar____other"
+                },
+                {
+                    "name": "other-2.webp",
+                    "path": "captcha\\guitar\\other\\other-2.webp",
+                    "size": 20034,
+                    "type": "webp",
+                    "category": "guitar____other"
+                },
+                {
+                    "name": "other-3.webp",
+                    "path": "captcha\\guitar\\other\\other-3.webp",
+                    "size": 9150,
+                    "type": "webp",
+                    "category": "guitar____other"
+                },
+                {
+                    "name": "other-4.webp",
+                    "path": "captcha\\guitar\\other\\other-4.webp",
+                    "size": 12530,
+                    "type": "webp",
+                    "category": "guitar____other"
+                }
+            ]
+        }
+    },
+    "wall_watch": {
+        "question": "Choose the Images of Watch that is hanging on Wall.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "wall_watch_1.webp",
+                "path": "captcha\\wall_watch\\wall_watch_1.webp",
+                "size": 11696,
+                "type": "webp",
+                "category": "wall_watch"
+            },
+            {
+                "name": "wall_watch_2.webp",
+                "path": "captcha\\wall_watch\\wall_watch_2.webp",
+                "size": 4330,
+                "type": "webp",
+                "category": "wall_watch"
+            },
+            {
+                "name": "wall_watch_3.webp",
+                "path": "captcha\\wall_watch\\wall_watch_3.webp",
+                "size": 7912,
+                "type": "webp",
+                "category": "wall_watch"
+            },
+            {
+                "name": "wall_watch_4.webp",
+                "path": "captcha\\wall_watch\\wall_watch_4.webp",
+                "size": 4016,
+                "type": "webp",
+                "category": "wall_watch"
+            },
+            {
+                "name": "wall_watch_5.webp",
+                "path": "captcha\\wall_watch\\wall_watch_5.webp",
+                "size": 7352,
+                "type": "webp",
+                "category": "wall_watch"
+            },
+            {
+                "name": "wall_watch_6.webp",
+                "path": "captcha\\wall_watch\\wall_watch_6.webp",
+                "size": 5502,
+                "type": "webp",
+                "category": "wall_watch"
+            },
+            {
+                "name": "wall_watch_7.webp",
+                "path": "captcha\\wall_watch\\wall_watch_7.webp",
+                "size": 16202,
+                "type": "webp",
+                "category": "wall_watch"
+            }
+        ],
+        "other": {
+            "question": "Choose the Images of Watch that is not hanging on Wall.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "watch_1.webp",
+                    "path": "captcha\\wall_watch\\other\\watch_1.webp",
+                    "size": 6806,
+                    "type": "webp",
+                    "category": "wall_watch____other"
+                },
+                {
+                    "name": "watch_2.webp",
+                    "path": "captcha\\wall_watch\\other\\watch_2.webp",
+                    "size": 5744,
+                    "type": "webp",
+                    "category": "wall_watch____other"
+                },
+                {
+                    "name": "watch_3.webp",
+                    "path": "captcha\\wall_watch\\other\\watch_3.webp",
+                    "size": 8674,
+                    "type": "webp",
+                    "category": "wall_watch____other"
+                },
+                {
+                    "name": "watch_4.webp",
+                    "path": "captcha\\wall_watch\\other\\watch_4.webp",
+                    "size": 7628,
+                    "type": "webp",
+                    "category": "wall_watch____other"
+                },
+                {
+                    "name": "watch_5.webp",
+                    "path": "captcha\\wall_watch\\other\\watch_5.webp",
+                    "size": 11918,
+                    "type": "webp",
+                    "category": "wall_watch____other"
+                }
+            ]
+        }
+    },
+    "white_car": {
+        "question": "Choose the Images of White Car and Facing towards Right Side.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "car-1.webp",
+                "path": "captcha\\white_car\\car-1.webp",
+                "size": 15111,
+                "type": "webp",
+                "category": "white_car"
+            },
+            {
+                "name": "car-2.webp",
+                "path": "captcha\\white_car\\car-2.webp",
+                "size": 14670,
+                "type": "webp",
+                "category": "white_car"
+            },
+            {
+                "name": "car-3.webp",
+                "path": "captcha\\white_car\\car-3.webp",
+                "size": 9284,
+                "type": "webp",
+                "category": "white_car"
+            },
+            {
+                "name": "car-4.webp",
+                "path": "captcha\\white_car\\car-4.webp",
+                "size": 8326,
+                "type": "webp",
+                "category": "white_car"
+            }
+        ],
+        "other": {
+            "question": "Choose the Images of non White Car and not Facing towards Right Side.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "other-1.webp",
+                    "path": "captcha\\white_car\\other\\other-1.webp",
+                    "size": 3742,
+                    "type": "webp",
+                    "category": "white_car____other"
+                },
+                {
+                    "name": "other-2.webp",
+                    "path": "captcha\\white_car\\other\\other-2.webp",
+                    "size": 4160,
+                    "type": "webp",
+                    "category": "white_car____other"
+                },
+                {
+                    "name": "other-3.webp",
+                    "path": "captcha\\white_car\\other\\other-3.webp",
+                    "size": 14064,
+                    "type": "webp",
+                    "category": "white_car____other"
+                },
+                {
+                    "name": "other-4.webp",
+                    "path": "captcha\\white_car\\other\\other-4.webp",
+                    "size": 11314,
+                    "type": "webp",
+                    "category": "white_car____other"
+                },
+                {
+                    "name": "other-5.webp",
+                    "path": "captcha\\white_car\\other\\other-5.webp",
+                    "size": 10304,
+                    "type": "webp",
+                    "category": "white_car____other"
+                }
+            ]
+        }
+    },
+    "yellow_car": {
+        "question": "Choose the Images of Yellow Car and Facing towards Left Side.",
+        "main_captcha": true,
+        "images": [
+            {
+                "name": "cars-1.webp",
+                "path": "captcha\\yellow_car\\cars-1.webp",
+                "size": 13972,
+                "type": "webp",
+                "category": "yellow_car"
+            },
+            {
+                "name": "cars-2.webp",
+                "path": "captcha\\yellow_car\\cars-2.webp",
+                "size": 14978,
+                "type": "webp",
+                "category": "yellow_car"
+            },
+            {
+                "name": "cars-3.webp",
+                "path": "captcha\\yellow_car\\cars-3.webp",
+                "size": 17622,
+                "type": "webp",
+                "category": "yellow_car"
+            },
+            {
+                "name": "cars-4.webp",
+                "path": "captcha\\yellow_car\\cars-4.webp",
+                "size": 5942,
+                "type": "webp",
+                "category": "yellow_car"
+            },
+            {
+                "name": "cars-5.webp",
+                "path": "captcha\\yellow_car\\cars-5.webp",
+                "size": 24994,
+                "type": "webp",
+                "category": "yellow_car"
+            },
+            {
+                "name": "cars-6.webp",
+                "path": "captcha\\yellow_car\\cars-6.webp",
+                "size": 15814,
+                "type": "webp",
+                "category": "yellow_car"
+            },
+            {
+                "name": "cars-7.webp",
+                "path": "captcha\\yellow_car\\cars-7.webp",
+                "size": 6770,
+                "type": "webp",
+                "category": "yellow_car"
+            },
+            {
+                "name": "cars-8.webp",
+                "path": "captcha\\yellow_car\\cars-8.webp",
+                "size": 11304,
+                "type": "webp",
+                "category": "yellow_car"
+            }
+        ],
+        "other": {
+            "question": "Choose the Images of non Yellow Car and not Facing towards Left Side.",
+            "main_captcha": false,
+            "images": [
+                {
+                    "name": "other-1.webp",
+                    "path": "captcha\\yellow_car\\other\\other-1.webp",
+                    "size": 21308,
+                    "type": "webp",
+                    "category": "yellow_car____other"
+                },
+                {
+                    "name": "other-2.webp",
+                    "path": "captcha\\yellow_car\\other\\other-2.webp",
+                    "size": 14368,
+                    "type": "webp",
+                    "category": "yellow_car____other"
+                },
+                {
+                    "name": "other-3.webp",
+                    "path": "captcha\\yellow_car\\other\\other-3.webp",
+                    "size": 4120,
+                    "type": "webp",
+                    "category": "yellow_car____other"
+                },
+                {
+                    "name": "other-4.webp",
+                    "path": "captcha\\yellow_car\\other\\other-4.webp",
+                    "size": 12162,
+                    "type": "webp",
+                    "category": "yellow_car____other"
+                },
+                {
+                    "name": "other-5.webp",
+                    "path": "captcha\\yellow_car\\other\\other-5.webp",
+                    "size": 11550,
+                    "type": "webp",
+                    "category": "yellow_car____other"
+                }
+            ]
+        }
+    }
+}
