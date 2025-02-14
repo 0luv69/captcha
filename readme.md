@@ -1,6 +1,6 @@
 # Video of Captcha 
 
-![Video of Captcha](https://github.com/user-attachments/assets/1b1cfa69-62f4-46e8-82d5-4e2a52d22b7c)
+[Video of Captcha](https://github.com/user-attachments/assets/1b1cfa69-62f4-46e8-82d5-4e2a52d22b7c)
 
 
 
@@ -189,4 +189,4 @@ This documentation should serve as a detailed guide for maintaining, extending, 
    - How direct console post is prevented 
 
 
-https://github.com/user-attachments/assets/a793b5f9-22dc-4127-8ae3-a4bed4c5f029
+[How it works](https://github.com/user-attachments/assets/a793b5f9-22dc-4127-8ae3-a4bed4c5f029)
