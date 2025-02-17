@@ -70,7 +70,7 @@ Purpose:Stores individual captcha images.
 
     Purpose:Fetches and builds a captcha challenge.
 
-    Functionality:
+   ##### Functionality:
 
     Randomly selects a captcha challenge from the database.
 
